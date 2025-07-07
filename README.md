@@ -1,13 +1,4 @@
-# 🎧 Artist Dashboard – Soundcharts Interview Project
-
-Ce projet est un **dashboard React** développé dans le cadre de mon processus de recrutement chez **Soundcharts**.
-
-Il démontre ma capacité à :
-- Structurer une interface avec React + Vite,
-- Gérer l’état (recherche, thème) de manière propre,
-- Styliser avec SCSS modulaires et responsive design,
-- Mettre en place un **thème clair/sombre** via `CSS variables`,
-- Organiser un projet avec **Git proprement (branches, commits, feature toggle)**.
+# 🎧 Artist Dashboard 
 
 ---
 
