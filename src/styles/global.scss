@@ -1,12 +1,67 @@
 /* global reset */
+
+:root {
+  --bg: #f9fafb;
+  --white: #ffffff;
+  --grey: #cccccc;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --card-text: #000000;
+  --accent: #000000;
+  --green: #34d114;
+  --red: #f61010;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #f2f3f4;
+  --card-bg: #1e293b;
+  --card-text: #f1f5f9;
+  --accent: #1e293b;
+}
+
+body.light {
+  --bg: #b7b8b9;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --card-text: #000000;
+  --accent: #0F172A;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-html, body {
+html, body, #root {
   height: 100%;
-  background: #1e2235;
-  font-family: 'Inter', sans-serif;
+}
+
+input[type="text"] {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--card-bg);
+  color: var(--card-text);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+
+  &::placeholder {
+    color: var(--card-text);
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border-color: var(--green);
+  }
 }

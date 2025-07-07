@@ -1,17 +1,18 @@
 .artist-card {
   display: flex;
   align-items: center;
-  background: #262b40;
-  color: #e5e7eb;
+  background: var(--card-bg);
+  color: var(--card-text);
   border-radius: 12px;
   padding: 1rem;
   gap: 1rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 
   &:hover {
     transform: translateY(-3px);
-    background: #2f354f;
+    background: var(--card-hover);
   }
 
   &__image {
@@ -43,11 +44,11 @@
     margin-top: 0.5rem;
 
     &.up {
-      color: #00ff85;
+      color: var(--green);
     }
 
     &.down {
-      color: #ff6c6c;
+      color: var(--red);
     }
   }
 }
