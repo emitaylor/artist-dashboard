@@ -1,0 +1,39 @@
+.dashboard {
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+  background: #1e2235;
+  min-height: 100vh;
+  color: #e5e7eb;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    input {
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #3a3f5a;
+      background: #262b40;
+      color: #e5e7eb;
+      min-width: 240px;
+    }
+
+    input::placeholder {
+      color: #9ca3af;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
