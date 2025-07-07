@@ -5,17 +5,23 @@ import { artists as artistList } from "../data/artists";
 import "../styles/Dashboard.scss";
 
 const Dashboard = () => {
-  const [query, setQuery] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [theme, setTheme] = useState("dark");
 
-const toggleTheme = () => {
-  const newTheme = theme === "dark" ? "light" : "dark";
-  setTheme(newTheme);
-  document.body.className = newTheme;
-};
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
+    useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const artists = artistList.filter((a) =>
-    a.name.toLowerCase().includes(query.toLowerCase())
+    a.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -23,7 +29,13 @@ const toggleTheme = () => {
       <header className="dashboard__header">
         <h1>Artist Dashboard</h1>
         <div className="header-actions">
-          <input className="search-input" type="text" placeholder="🔍 Rechercher un artiste" />
+          <input
+            type="text"
+            placeholder="🔍 Rechercher un artiste"
+            className="search-input"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
           <ToggleButton theme={theme} toggleTheme={toggleTheme} />
         </div>
       </header>
